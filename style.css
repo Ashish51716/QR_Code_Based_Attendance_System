@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+
+/* Header */
+
+header {
+    background: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+header h1 {
+    margin-bottom: 8px;
+}
+
+
+/* Main Container */
+
+.main-container {
+    width: 95%;
+    max-width: 1400px;
+    margin: 30px auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+
+/* Panels */
+
+.panel {
+    background: white;
+    padding: 25px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.1);
+}
+
+.panel h2 {
+    text-align: center;
+
+    margin-bottom: 25px;
+
+    color: #1e3a8a;
+}
+
+
+/* Input */
+
+input {
+    width: 100%;
+
+    padding: 13px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 7px;
+
+    font-size: 15px;
+}
+
+
+/* Buttons */
+
+button {
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+
+/* QR */
+
+#teacherQR,
+#studentQR {
+    display: flex;
+
+    justify-content: center;
+
+    margin: 25px 0;
+}
+
+
+/* Dashboard */
+
+.dashboard {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin: 25px 0;
+}
+
+.stat {
+    background: #e0f2fe;
+
+    text-align: center;
+
+    padding: 20px;
+
+    border-radius: 10px;
+}
+
+.stat h3 {
+    font-size: 28px;
+}
+
+.present {
+    background: #dcfce7;
+}
+
+.absent {
+    background: #fee2e2;
+}
+
+
+/* Table */
+
+.table-title {
+    margin: 20px 0 10px;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 12px;
+
+    border: 1px solid #ddd;
+
+    text-align: center;
+}
+
+th {
+    background: #1e3a8a;
+
+    color: white;
+}
+
+td {
+    background: #f8fafc;
+}
+
+
+/* Scanner */
+
+#reader {
+    width: 100%;
+
+    max-width: 400px;
+
+    margin: 20px auto;
+}
+
+
+/* Messages */
+
+#sessionMessage,
+#scanMessage {
+    text-align: center;
+
+    font-weight: bold;
+
+    margin: 15px;
+}
+
+
+/* Status */
+
+.status-box {
+    background: #f8fafc;
+
+    padding: 20px;
+
+    text-align: center;
+
+    border-radius: 10px;
+
+    margin-top: 20px;
+}
+
+#studentStatus {
+    margin-top: 10px;
+
+    font-weight: bold;
+
+    font-size: 18px;
+}
+
+
+/* Clear Button */
+
+.clear-btn {
+    background: #dc2626;
+
+    margin-top: 20px;
+}
+
+.clear-btn:hover {
+    background: #b91c1c;
+}
+
+
+/* HR */
+
+hr {
+    margin: 30px 0;
+
+    border: none;
+
+    border-top: 1px solid #ddd;
+}
+
+
+/* Responsive */
+
+@media(max-width: 900px) {
+
+    .main-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media(max-width: 500px) {
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .panel {
+        padding: 15px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QR Attendance System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- QR Code Generator -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <!-- QR Scanner -->
+    <script src="https://unpkg.com/html5-qrcode"></script>
+</head>
+
+<body>
+
+<header>
+    <h1>QR Code Attendance System</h1>
+    <p>Teacher & Student Attendance Portal</p>
+</header>
+
+
+<div class="main-container">
+
+    <!-- ================= TEACHER SIDE ================= -->
+
+    <section class="panel teacher-panel">
+
+        <h2>👨‍🏫 Teacher Panel</h2>
+
+        <div class="teacher-box">
+
+            <h3>Create Attendance Session</h3>
+
+            <input
+                type="text"
+                id="subject"
+                placeholder="Enter Subject"
+            >
+
+            <input
+                type="text"
+                id="teacherName"
+                placeholder="Enter Teacher Name"
+            >
+
+            <button onclick="createSession()">
+                Generate Attendance QR
+            </button>
+
+            <div id="teacherQR"></div>
+
+            <p id="sessionMessage"></p>
+
+        </div>
+
+
+        <!-- Dashboard -->
+
+        <div class="dashboard">
+
+            <div class="stat">
+                <h3 id="totalStudents">0</h3>
+                <p>Total</p>
+            </div>
+
+            <div class="stat present">
+                <h3 id="presentStudents">0</h3>
+                <p>Present</p>
+            </div>
+
+            <div class="stat absent">
+                <h3 id="absentStudents">0</h3>
+                <p>Absent</p>
+            </div>
+
+        </div>
+
+
+        <!-- Attendance Table -->
+
+        <h3 class="table-title">
+            Attendance Records
+        </h3>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Roll No.</th>
+                    <th>Time</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody id="attendanceTable">
+            </tbody>
+
+        </table>
+
+        <button
+            class="clear-btn"
+            onclick="clearAttendance()">
+            Clear Attendance
+        </button>
+
+    </section>
+
+
+
+    <!-- ================= STUDENT SIDE ================= -->
+
+    <section class="panel student-panel">
+
+        <h2>👨‍🎓 Student Panel</h2>
+
+        <div class="student-box">
+
+            <h3>Student Details</h3>
+
+            <input
+                type="text"
+                id="studentName"
+                placeholder="Enter Student Name"
+            >
+
+            <input
+                type="text"
+                id="rollNumber"
+                placeholder="Enter Roll Number"
+            >
+
+            <button onclick="generateStudentQR()">
+                Generate Student QR
+            </button>
+
+            <div id="studentQR"></div>
+
+        </div>
+
+
+        <hr>
+
+
+        <h3>Scan Teacher QR</h3>
+
+        <div id="reader"></div>
+
+        <p id="scanMessage">
+            Scan teacher's QR code to mark attendance.
+        </p>
+
+
+        <!-- Student Attendance Status -->
+
+        <div class="status-box">
+
+            <h3>Attendance Status</h3>
+
+            <p id="studentStatus">
+                Not Marked
+            </p>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
